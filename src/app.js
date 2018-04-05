@@ -12,26 +12,6 @@ import { Provider } from 'react-redux';
 
 const store = configureStore();
 
-store.dispatch(expensesActions.addExpense({
-    description:'Water bill',
-    note:'Dis iz note',
-    amount: 5500,
-    createdAt: 1000
-}));
-
-store.dispatch(expensesActions.addExpense({
-    description:'Rent',
-    note:'Dis iz note',
-    amount: 109500,
-}));
-
-store.dispatch(expensesActions.addExpense({
-    description:'Gas bill',
-    note:'Dis iz note',
-    amount: 4500,
-}));
-
-
 const jsx = (
     <Provider store={ store }>
         <AppRouter />
