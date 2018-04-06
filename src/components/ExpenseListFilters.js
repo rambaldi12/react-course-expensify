@@ -8,7 +8,7 @@ class ExpenseListFilters extends React.Component {
     state = {
         calendarFocused: null
     }
-    onDatesChange = ({startDate, endDate}) => {
+    onDatesChange = ({ startDate, endDate }) => {
         this.props.dispatch(filtersActions.setStartDate(startDate));
         this.props.dispatch(filtersActions.setEndDate(endDate))
     }
@@ -26,16 +26,16 @@ class ExpenseListFilters extends React.Component {
                 <option value="amount">Amount</option>
             </select>
             <DateRangePicker
-            startDate={this.props.filters.startDate}
-            endDate={this.props.filters.endDate}
-            onDatesChange={this.onDatesChange}
-            focusedInput={this.state.calendarFocused}
-            onFocusChange={(calendarFocused) => this.setState(() => ({
-                calendarFocused
-            }))}
-            numberOfMonths={1}
-            isOutsideRange={ () => false}
-            showClearDates={true}
+                startDate={this.props.filters.startDate}
+                endDate={this.props.filters.endDate}
+                onDatesChange={this.onDatesChange}
+                focusedInput={this.state.calendarFocused}
+                onFocusChange={(calendarFocused) => this.setState(() => ({
+                    calendarFocused
+                }))}
+                numberOfMonths={1}
+                isOutsideRange={() => false}
+                showClearDates={true}
             />
         </div>
     }
