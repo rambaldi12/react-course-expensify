@@ -8,7 +8,7 @@ import * as expensesActions from './actions/expenses';
 import * as filtersActions from './actions/filters';
 import getVisibleExpenses from './selectors/expenses'
 import { Provider } from 'react-redux';
-
+import './firebase/firebase';
 
 const store = configureStore();
 const jsx = (
