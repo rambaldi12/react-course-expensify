@@ -10,12 +10,16 @@ const EditExpensePage = (props) => {
         ?
         <div>
         <ExpenseForm expense={props.expense} onSubmit={(expense)=>{
-            props.dispatch(actions.editExpense(props.match.params.id,expense));
-            props.history.push('/');
+            props.dispatch(actions.startEditExpense(props.match.params.id,expense)).then(()=>{
+                props.history.push('/');
+            });
+            
          }} />
          <button onClick={ ()=> { 
-            props.dispatch(actions.removeExpense({id: props.match.params.id}));
-             props.history.push('/');
+            props.dispatch(actions.startRemoveExpense({id: props.match.params.id})).then(()=>{
+                props.history.push('/');
+            });
+             
             }}>REMOVE</button>
          </div>
          : 
